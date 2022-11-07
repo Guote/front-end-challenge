@@ -11,8 +11,8 @@ import {
   Duration,
   Thumbnail,
 } from './styles';
-import { Label } from '../GenreLabel';
-import { PlayButton } from '../PlayButton';
+import { Label } from './GenreLabel';
+import { PlayButton } from './PlayButton';
 
 export const SongCard = ({ song }: Props) => {
 
