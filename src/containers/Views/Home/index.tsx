@@ -1,4 +1,5 @@
 import { Text } from '$/components/Text';
+import { FeaturedSongs } from '$/components/FeaturedSongs';
 
 import { Container, SearchInput } from './styles';
 
@@ -9,6 +10,7 @@ function HomeView(): JSX.Element {
         Explore
       </Text>
       <SearchInput placeholder="Search by title, genre..." />
+      <FeaturedSongs />
     </Container>
   );
 }
