@@ -7,7 +7,8 @@ In order to start this project locally, download or clone it to your machine, op
 
 You can see a deployed version of the current code here
 
-<a href="https://front-end-challenge-alonso-rojo-curto.vercel.app/"><h3 style="text-align: center;">Alonso Rojo Curto DEMO</h3></a>
+<h3 style="text-align: center;">Alonso Rojo Curto</h3>
+https://front-end-challenge-alonso-rojo-curto.vercel.app/
 
 
 ## Bare minimum
