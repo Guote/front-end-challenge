@@ -30,4 +30,4 @@ export const EMPTY_SONG = {
   audio: {
     url: '',
   },
-}
+};

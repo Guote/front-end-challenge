@@ -7,6 +7,7 @@ export const getCurrentSong = R.pathOr<Song>(EMPTY_SONG, [
   'player',
   'currentSong',
 ]);
+export const getFilteredSongs = R.pathOr<Array<Song>>([], ['player', 'filteredSongs']);
 export const getIsPlayerOpen = R.pathOr<boolean>(false, [
   'player',
   'player',
