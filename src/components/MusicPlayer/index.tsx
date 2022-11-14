@@ -5,7 +5,7 @@ import {
 
 } from '../../store/player';
 import { formatAudioDuration } from '../../utils/helpers';
-import { InputRange } from '../ProgressSlider';
+import { InputRange } from '../InputRange';
 import { Text } from '../Text';
 import { usePlayerLogic } from './logic';
 import {
