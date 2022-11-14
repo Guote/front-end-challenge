@@ -1,7 +1,7 @@
 import '$/styles/fonts.css';
 import { Provider } from 'react-redux';
 import { store } from '$/store/store';
-import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { Layout } from '$/containers/Layouts';
 import GlobalStyle from '$/styles/global';
 import theme from '$/styles/themes';
