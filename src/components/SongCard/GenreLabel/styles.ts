@@ -9,4 +9,10 @@ export const LabelContainer = styled.span`
   padding: 0 0.25rem 0.5rem;
   border-radius: 3rem;
   text-transform: capitalize;
+
+  @media screen and (max-width: 768px) {
+    position: absolute;
+    left: 10rem;
+    top: 6rem;
+  }
 `;

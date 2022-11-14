@@ -6,6 +6,10 @@ export const Container = styled.div`
   min-width: 10rem;
   margin-top: 2rem;
   margin-bottom: -0.5rem;
+  @media screen and (max-width: 768px) {
+    position: relative;
+    min-height: 14rem;
+  }
 `;
 
 export const Thumbnail = styled.img`
@@ -38,6 +42,11 @@ export const Duration = styled(Text)`
 export const Description = styled(Text)`
   margin-top: 0.25em;
   margin-bottom: 0.25em;
+  @media screen and (max-width: 768px) {
+    position: absolute;
+    top: 9rem;
+    left: 1rem;
+  }
 `;
 
 export const PlayButton = styled.button`
@@ -66,6 +75,12 @@ export const FavButton = styled.button`
   border: none;  cursor: pointer;
   &:hover {
     transform: scale(1.1);
+  }
+
+  @media screen and (max-width: 768px) {
+    position: absolute;
+    top: 1rem;
+    right: 0;
   }
 `;
 

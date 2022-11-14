@@ -2,7 +2,7 @@ import { Text } from '$/components/Text';
 import { SongList } from '$/components/SongList';
 
 import { Container, SearchInput } from './styles';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { MusicPlayer } from '$/components/MusicPlayer';
 import { useDispatch, useSelector } from '$/store';
 import { getIsPlayerOpen, getSongs, setFilteredSongs } from '$/store/player';
@@ -38,8 +38,11 @@ function HomeView(): JSX.Element {
   const handleFilterChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const regexp = new RegExp(`${event.target.value}`, 'i');
     setFilterQuery(regexp);
-    dispatch(setFilteredSongs(filteredSongs))
   };
+
+  useEffect(()=> {
+    dispatch(setFilteredSongs(filteredSongs))
+  }, [filterQuery])
 
   return (
     <Container>

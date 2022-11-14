@@ -51,6 +51,12 @@ export const PlayerControls = styled.div`
       margin-right: 0.75rem;
     }
   }
+
+  @media screen and (max-width: 768px) {
+    scale: 0.8;
+    top: 0.7rem;
+    left: 65%;
+  }
 `;
 
 export const Button = styled.button`
@@ -74,7 +80,7 @@ export const PlayButton = styled(Button)`
 `;
 export const Icon = styled.span`
   color: ${({ theme }) => theme.color.white};
-  scale: 150%
+  scale: 150%;
 `;
 export const PlayIcon = styled(Icon)`
   color: ${({ theme }) => theme.color.grayscale900};
@@ -89,9 +95,15 @@ export const ProgressTime = styled.div`
   justify-content: end;
   align-items: center;
   margin-top: 0.5rem;
-  width: 100%;
-  min-width: 300px;
-  max-width: 40rem;
+  width: 35%;
+
+  @media screen and (max-width: 768px) {
+    position:absolute;
+    right: 1rem;
+    bottom: 0.5rem;
+    width: 65%;
+    padding-top: 1rem;
+  }
 `;
 
 export const ProgressTimeText = styled(Text)`

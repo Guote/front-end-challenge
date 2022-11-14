@@ -4,8 +4,9 @@ import { StyledMenuItemLinkProps, StyledMenuItemProps } from './types';
 
 export const Container = styled.aside`
   position: relative;
-
-  width: 15rem;
+  width: 20%;
+  max-width: 15rem;
+  min-width: 10rem;
   height: 100vh;
 
   background-color: ${({ theme }) => theme.color.grayscale50};
@@ -78,4 +79,9 @@ export const Thumbnail = styled.img`
 
   border-radius: 0.375rem;
   margin-inline-end: 0.5rem;
+  
+  @media screen and (max-width: 992px) {
+    visibility: hidden;
+    width: 0;
+  }
 `;
