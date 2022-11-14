@@ -10,7 +10,8 @@ const theme = {
     grayscale200: '#C9CDDB',
     grayscale100: '#E0DDE4',
     grayscale50: '#F7F6F8',
-    lightblue: '#E1F4FB',
+    lightblue: '#88CFFB',
+    lighterblue: '#E1F4FB',
   },
   weight: {
     bold: 700,

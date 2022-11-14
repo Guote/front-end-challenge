@@ -1,12 +1,13 @@
 import React from 'react';
-
+import { useSelector } from '$/store';
+import { getSongs } from '$/store/player';
 import { SongCard } from '../SongCard';
 import { Text } from '../Text';
 import { Container } from './styles';
 
-import { songs } from './mockSongs';
+export const SongList = () => {
+  const songs = useSelector(getSongs)
 
-export const FeaturedSongs = () => {
   return (
     <Container>
       <Text tag="h2" variant="title2">

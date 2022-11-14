@@ -4,7 +4,8 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   min-width: 10rem;
-  margin: 2rem 0rem;
+  margin-top: 2rem;
+  margin-bottom: -0.5rem;
 `;
 
 export const Thumbnail = styled.img`
@@ -23,13 +24,14 @@ export const SongBody = styled.div`
 `;
 
 export const SongDetails = styled.div`
+  margin-top:0.5rem;
+  max-height: 2.8rem;
   display: flex;
   align-items: center;
-  margin-top: -0.5rem;
 `;
 
 export const Duration = styled(Text)`
-  margin: 0 0.75rem;
+  padding: 0 1rem 0.5rem 1rem;
   color: #484a69;
 `;
 
@@ -38,3 +40,23 @@ export const Description = styled(Text)`
   margin-bottom: 0.25em;
 `;
 
+export const PlayButton = styled.button`
+  background: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  width: 2rem;
+  background-color: ${({ theme }) => theme.color.grayscale900};
+  border-radius: 50%;
+  cursor: pointer;
+    &:hover {
+    transform: scale(1.1);
+  }
+`;
+
+export const Icon = styled.span`
+  color: white;
+`;
