@@ -1,12 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Song } from '$/common/types';
-import { EMPTY_SONG } from '$/common/constants';
+import { Song } from '$/globals/constants/types';
+import { EMPTY_SONG } from '$/globals/constants/constants';
 
 export * from './selectors';
 
 // Type for our state
 export interface PlayerState {
   songs: Array<Song>;
+  favoriteSongsId: Array<number>;
   filteredSongs: Array<Song>;
   player: {
     isOpen: boolean;
@@ -19,6 +20,7 @@ export interface PlayerState {
 // Initial state
 const initialState: PlayerState = {
   songs: [],
+  favoriteSongsId: [],
   filteredSongs: [],
   player: {
     isOpen: false,
@@ -35,6 +37,9 @@ export const playerSlice = createSlice({
   reducers: {
     setCurrentSong(state, action: PayloadAction<Song>) {
       state.player.currentSong = action.payload;
+    },
+    setFavoriteSongsId(state, action: PayloadAction<Array<number>>) {
+      state.favoriteSongsId = action.payload;
     },
     setFilteredSongs(state, action: PayloadAction<Array<Song>>) {
       state.filteredSongs = action.payload;
@@ -53,6 +58,7 @@ export const playerSlice = createSlice({
 
 export const {
   setCurrentSong,
+  setFavoriteSongsId,
   setFilteredSongs,
   setIsPlaying,
   setOpenPlayer,

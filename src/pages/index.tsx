@@ -3,6 +3,7 @@ import { useFetchSongs } from '$/services/graphql-songs';
 
 function HomePage(): JSX.Element {
   useFetchSongs();
+
   return <HomeView />;
 }
 

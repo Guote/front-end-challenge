@@ -1,12 +1,13 @@
 import * as R from 'ramda';
-import { Song } from '$/common/types';
-import { EMPTY_SONG } from '$/common/constants';
+import { Song } from '$/globals/constants/types';
+import { EMPTY_SONG } from '$/globals/constants/constants';
 
 export const getCurrentSong = R.pathOr<Song>(EMPTY_SONG, [
   'player',
   'player',
   'currentSong',
 ]);
+export const getFavoriteSongsId = R.pathOr<Array<number>>([], ['player', 'favoriteSongsId']);
 export const getFilteredSongs = R.pathOr<Array<Song>>([], ['player', 'filteredSongs']);
 export const getIsPlayerOpen = R.pathOr<boolean>(false, [
   'player',

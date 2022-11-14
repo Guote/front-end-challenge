@@ -24,7 +24,7 @@ export const SongBody = styled.div`
 `;
 
 export const SongDetails = styled.div`
-  margin-top:0.5rem;
+  margin-top: 0.5rem;
   max-height: 2.8rem;
   display: flex;
   align-items: center;
@@ -52,11 +52,27 @@ export const PlayButton = styled.button`
   background-color: ${({ theme }) => theme.color.grayscale900};
   border-radius: 50%;
   cursor: pointer;
-    &:hover {
+  &:hover {
     transform: scale(1.1);
   }
 `;
 
 export const Icon = styled.span`
   color: white;
+`;
+
+export const FavButton = styled.button`
+  background: none;
+  border: none;  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+  }
+`;
+
+export const FavIcon = styled.span`
+color: ${({ theme }) => theme.color.grayscale200};
+&.active, &:hover {
+  color: #BF508B;
+}
+  transition: color 0.5s ease-in-out;
 `;

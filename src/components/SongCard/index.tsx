@@ -15,6 +15,7 @@ import {
   setIsPlaying,
   setOpenPlayer,
 } from '../../store/player';
+import { useFavSongs } from '../../services/favorites';
 
 export const SongCard = ({ song }: Props) => {
   const isPlayerOpen = useSelector(getIsPlayerOpen);
@@ -22,6 +23,9 @@ export const SongCard = ({ song }: Props) => {
   const isPlaying = useSelector(getIsPlaying);
   const dispatch = useDispatch();
   const [duration, setDuration] = useState<string>('');
+
+  const { isFav, toggleFav } = useFavSongs();
+
   useEffect(() => {
     const audio = new Audio(song.audio.url);
     audio.onloadedmetadata = () => {
@@ -68,6 +72,11 @@ export const SongCard = ({ song }: Props) => {
           <Label text={song.genre} />
         </S.SongDetails>
       </S.SongBody>
+      <S.FavButton onClick={() => toggleFav(song.id)}>
+        <S.FavIcon className={`material-icons ${isFav(song.id) ? 'active':''}`} >
+          &#xe87d;
+        </S.FavIcon>
+      </S.FavButton>
     </S.Container>
   );
 };

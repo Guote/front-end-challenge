@@ -1,6 +1,6 @@
 import { gql, useQuery } from '@apollo/client';
-import { Song } from '$/common/types';
-import { SONGS_QUERY } from '../../common/constants';
+import { Song } from '$/globals/constants/types';
+import { SONGS_QUERY } from '../../globals/constants/constants';
 import { useDispatch } from '../../store';
 import { setFilteredSongs, setSongs } from '../../store/player';
 

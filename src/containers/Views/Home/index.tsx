@@ -39,7 +39,6 @@ function HomeView(): JSX.Element {
     const regexp = new RegExp(`${event.target.value}`, 'i');
     setFilterQuery(regexp);
     dispatch(setFilteredSongs(filteredSongs))
-    return console.log(event.target.value);
   };
 
   return (

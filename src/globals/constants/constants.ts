@@ -31,3 +31,5 @@ export const EMPTY_SONG = {
     url: '',
   },
 };
+
+export const FAV_KEY_LOCAL_STORAGE = 'FAV_KEY_LOCAL_STORAGE';
