@@ -1,6 +1,5 @@
 import { Text } from '$/components/Text';
 import { SongList } from '$/components/SongList';
-
 import { Container, SearchInput } from './styles';
 import React, { useEffect, useState } from 'react';
 import { MusicPlayer } from '$/components/MusicPlayer';
@@ -15,34 +14,22 @@ function HomeView(): JSX.Element {
   const songs = useSelector(getSongs);
 
   const filteredSongs = R.filter(
-    R.anyPass(
-      [R.pipe(
-       R.pathOr('', ['genre']),
-       R.test(filterQuery)
-      ),
-      R.pipe(
-       R.pathOr('', ['name']),
-       R.test(filterQuery)
-      ),
-      R.pipe(
-       R.pathOr('', ['author', 'name']),
-       R.test(filterQuery)
-      ),
-      R.pipe(
-       R.pathOr('', ['description']),
-       R.test(filterQuery)
-      )]
-    )
-  )(songs)
+    R.anyPass([
+      R.pipe(R.pathOr('', ['genre']), R.test(filterQuery)),
+      R.pipe(R.pathOr('', ['name']), R.test(filterQuery)),
+      R.pipe(R.pathOr('', ['author', 'name']), R.test(filterQuery)),
+      R.pipe(R.pathOr('', ['description']), R.test(filterQuery)),
+    ]),
+  )(songs);
 
   const handleFilterChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const regexp = new RegExp(`${event.target.value}`, 'i');
     setFilterQuery(regexp);
   };
 
-  useEffect(()=> {
-    dispatch(setFilteredSongs(filteredSongs))
-  }, [filterQuery])
+  useEffect(() => {
+    dispatch(setFilteredSongs(filteredSongs));
+  }, [filterQuery]);
 
   return (
     <Container>

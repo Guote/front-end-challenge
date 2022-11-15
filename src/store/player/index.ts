@@ -15,6 +15,7 @@ export interface PlayerState {
     progress: number;
     currentSong: Song;
   };
+  error: string | undefined
 }
 
 // Initial state
@@ -28,6 +29,7 @@ const initialState: PlayerState = {
     progress: 0,
     currentSong: EMPTY_SONG,
   },
+  error: undefined
 };
 
 // Actual Slice
@@ -37,6 +39,9 @@ export const playerSlice = createSlice({
   reducers: {
     setCurrentSong(state, action: PayloadAction<Song>) {
       state.player.currentSong = action.payload;
+    },
+    setError(state, action: PayloadAction<string | undefined>) {
+      state.error = action.payload;
     },
     setFavoriteSongsId(state, action: PayloadAction<Array<number>>) {
       state.favoriteSongsId = action.payload;
@@ -60,6 +65,7 @@ export const {
   setCurrentSong,
   setFavoriteSongsId,
   setFilteredSongs,
+  setError,
   setIsPlaying,
   setOpenPlayer,
   setSongs,

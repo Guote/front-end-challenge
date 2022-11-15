@@ -26,8 +26,8 @@ Once you run this or look at it in its deployed version, you should be able to:
 
 ## Extra work #2 
 - App should look good in all window sizes ✔️
-- Add unit or integration tests ❌
-Even though I have some experience testing components, I couldn't invest as much time as I would have liked to prove myself. This will be a recurring theme in this readme...
+- Add unit or integration tests 〽️
+Even though I have some experience testing components, I couldn't invest as much time as I would have liked to prove myself. I added test to the helper funtions I used for managing logic, but I got stuck trying to set up jest to work with redux in typescript and could not create tests for the components.
 - Add some micro interactions and animations ✔️
 I would say that the added animations are functional, although not that pretty. Just enough for the user to have some feedback.
 - Be careful about accessibility 〽️
@@ -38,6 +38,7 @@ I was aware of this for most of the journey, but I think I could have done a bet
 # Some thoughts and hiccups in the way
 
 - I had never worked before with Next.js, GraphQL, or StyledComponents, and only a little bit with Typescript. I also had to search the web to be able to manage the local storage. I think that in a couple of months I will look back at this code and feel embarrased, but for today, specially since I could only allocate a couple of hours every couple of days this past week, I'm proud of my work. 
-- I wanted to use Redux as the context manager, which was a real pain to get working with typescript. I think my job here is not quite as clean as it should, because every day I kept finding new ways in which typescript or next.js didn't want to cooperate as easily as I'm accustomed to in my current workplace. On the other hand I got to see some of the perks of working like this, and I can't wait to incorporate what I've learned so far.
+- I wanted to use Redux as my context manager, which was a real pain to get working with typescript. I think my job here is not quite as clean as it should, because every day I kept finding new ways in which typescript or next.js didn't want to cooperate as easily as I'm accustomed to in my current workplace. This happened up until the last moment, when suddenly a big error on the console made me throw away a whole day of work (well, the couple of hours I was able to dedicate to this). I wanted so bad to get some whole components tests, but I was defeated here. On the other hand I got to see some of the perks of working like this, and I can't wait to incorporate what I've learned so far in my day to day work. 
+- For the filtering logic, the sensible thing would have been to learn how to do it with Apollo's own tools. I know that, but instead I wanted to at least showcase other things that I use, in hopes of giving me a little bit of an edge over the other participants. That why I went for using ramda and selectors for this part.
 
 

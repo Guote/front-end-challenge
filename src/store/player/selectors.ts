@@ -8,6 +8,7 @@ export const getCurrentSong = R.pathOr<Song>(EMPTY_SONG, [
   'currentSong',
 ]);
 export const getFavoriteSongsId = R.pathOr<Array<number>>([], ['player', 'favoriteSongsId']);
+export const getError = R.pathOr<string | boolean>(false, ['player', 'error']);
 export const getFilteredSongs = R.pathOr<Array<Song>>([], ['player', 'filteredSongs']);
 export const getIsPlayerOpen = R.pathOr<boolean>(false, [
   'player',
