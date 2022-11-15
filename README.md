@@ -35,10 +35,13 @@ I probably could have made the typhographies a little bit easier on the eyes.
 - Be careful about your markup semantics 〽️
 I was aware of this for most of the journey, but I think I could have done a better job.
 
+# First things to improve
+
+- Number one would be to get jest to work with redux in typescript and add some component tests. I got an extra day just for this and could not make it.
+- I don't mind having a little of logic inside components if those are small, but in HomeView I have a helper function that should really be a selector. I tried to set it up like that, but had a lot of problems typing `createSelector` properly and I couldn't make it work, so I finally pulled back on the decision. This also causes a warning in the console because I had to use an extra useState-useEffect pair that don't go that well together.
+
 # Some thoughts and hiccups in the way
 
 - I had never worked before with Next.js, GraphQL, or StyledComponents, and only a little bit with Typescript. I also had to search the web to be able to manage the local storage. I think that in a couple of months I will look back at this code and feel embarrased, but for today, specially since I could only allocate a couple of hours every couple of days this past week, I'm proud of my work. 
-- I wanted to use Redux as my context manager, which was a real pain to get working with typescript. I think my job here is not quite as clean as it should, because every day I kept finding new ways in which typescript or next.js didn't want to cooperate as easily as I'm accustomed to in my current workplace. This happened up until the last moment, when suddenly a big error on the console made me throw away a whole day of work (well, the couple of hours I was able to dedicate to this). I wanted so bad to get some whole components tests, but I was defeated here. On the other hand I got to see some of the perks of working like this, and I can't wait to incorporate what I've learned so far in my day to day work. 
-- For the filtering logic, the sensible thing would have been to learn how to do it with Apollo's own tools. I know that, but instead I wanted to at least showcase other things that I use, in hopes of giving me a little bit of an edge over the other participants. That why I went for using ramda and selectors for this part.
-
-
+- I wanted to use Redux as my context manager, which was a real pain to get working with typescript. I think my job here is not quite as clean as it should, because every day I kept finding new ways in which typescript or next.js didn't want to cooperate as easily as I'm accustomed to in my current workplace. On the other hand I got to see some of the perks of working like this, and I can't wait to incorporate what I've learned so far in my day to day work. 
+- For the filtering logic, the sensible thing would have been to learn how to do it with Apollo's own tools. I know that, but instead I wanted to at least showcase other things that I can use, in hopes of giving me a little bit of an edge over the other participants. That why I went for using ramda and selectors for this part.
