@@ -1,4 +1,4 @@
-import { formatAudioDuration } from '../helpers';
+import { formatAudioDuration } from './helpers';
 describe('Tests for formatAudioDuration helper', () => {
   test('should return "m min s s" when "mode" is not defined', () => {
     expect(formatAudioDuration(75)).toEqual('1 min 15 s');

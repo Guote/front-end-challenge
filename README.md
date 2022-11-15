@@ -38,7 +38,6 @@ I was aware of this for most of the journey, but I think I could have done a bet
 # First things to improve
 
 - Number one would be to get jest to work with redux in typescript and add some component tests. I got an extra day just for this and could not make it.
-- I don't mind having a little of logic inside components if those are small, but in HomeView I have a helper function that should really be a selector. I tried to set it up like that, but had a lot of problems typing `createSelector` properly and I couldn't make it work, so I finally pulled back on the decision. This also causes a warning in the console because I had to use an extra useState-useEffect pair that don't go that well together.
 
 # Some thoughts and hiccups in the way
 

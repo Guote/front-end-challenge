@@ -1,15 +1,18 @@
 import React from 'react';
 import { useSelector } from '$/store';
-import { getError, getFilteredSongs } from '$/store/player';
+import { getError } from '$/store/player';
 import * as R from 'ramda';
 import { SongCard } from '../SongCard';
 import { Text } from '../Text';
 import { Container, Loading } from './styles';
+import { Song } from '../../globals/constants/types';
 
-export const SongList = () => {
-  const filteredSongs = useSelector(getFilteredSongs);
+type Props = {
+  songs: Song[];
+};
+export const SongList = ({ songs }: Props) => {
   const error = useSelector(getError);
-  const isSongsLoaded = R.not(R.isEmpty(filteredSongs));
+  const isSongsLoaded = R.not(R.isEmpty(songs));
 
   if (error)
     return (
@@ -25,7 +28,7 @@ export const SongList = () => {
         Featured songs
       </Text>
       {isSongsLoaded ? (
-        filteredSongs.map((song) => <SongCard song={song} key={song.id} />)
+        songs.map((song) => <SongCard song={song} key={song.id} />)
       ) : (
         <Loading />
       )}

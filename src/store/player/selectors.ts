@@ -1,23 +1,30 @@
 import * as R from 'ramda';
 import { Song } from '$/globals/constants/types';
-import { EMPTY_SONG } from '$/globals/constants/constants';
+import { RootState } from '../store';
+import { createSelector } from '@reduxjs/toolkit';
 
-export const getCurrentSong = R.pathOr<Song>(EMPTY_SONG, [
-  'player',
-  'player',
-  'currentSong',
-]);
-export const getFavoriteSongsId = R.pathOr<Array<number>>([], ['player', 'favoriteSongsId']);
-export const getError = R.pathOr<string | boolean>(false, ['player', 'error']);
-export const getFilteredSongs = R.pathOr<Array<Song>>([], ['player', 'filteredSongs']);
-export const getIsPlayerOpen = R.pathOr<boolean>(false, [
-  'player',
-  'player',
-  'isOpen',
-]);
-export const getIsPlaying = R.pathOr<boolean>(false, [
-  'player',
-  'player',
-  'isPlaying',
-]);
-export const getSongs = R.pathOr<Array<Song>>([], ['player', 'songs']);
+export const getCurrentSong= (state: RootState) => state.player.player.currentSong
+export const getFavoriteSongsId= (state: RootState) => state.player.favoriteSongsId
+export const getError= (state: RootState) => state.player.error
+
+export const getIsPlayerOpen= (state: RootState) => state.player.player.isOpen
+export const getIsPlaying= (state: RootState) => state.player.player.isPlaying
+
+export const getSongs = (state: RootState) => state.player.songs;
+
+type Return = (state: RootState) => Song[];
+export const getFilteredSongs = (filterQuery: RegExp): Return =>
+  createSelector([getSongs], (songs) =>
+    R.ifElse(
+      R.isEmpty,
+      R.identity,
+      R.filter(
+        R.anyPass([
+          R.pipe(R.pathOr('', ['genre']), R.test(filterQuery)),
+          R.pipe(R.pathOr('', ['name']), R.test(filterQuery)),
+          R.pipe(R.pathOr('', ['author', 'name']), R.test(filterQuery)),
+          R.pipe(R.pathOr('', ['description']), R.test(filterQuery)),
+        ]),
+      ),
+    )(songs),
+  );
