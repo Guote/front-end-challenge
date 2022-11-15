@@ -22,6 +22,7 @@ describe('Test for filterSongs helper', () => {
   test('Filters by songs that contain the query either in name, genre, author or description', () => {
     const testState = { player: { songs: MOCK_SONGS}};
     const state = Object.assign({}, initialState, testState);
+    
     const filterQuery = /dr/i;
     const filteredSongs = [MOCK_SONGS[1], MOCK_SONGS[9], MOCK_SONGS[17]];
     

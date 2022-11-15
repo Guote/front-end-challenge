@@ -26,18 +26,17 @@ Once you run this or look at it in its deployed version, you should be able to:
 
 ## Extra work #2 
 - App should look good in all window sizes ✔️
-- Add unit or integration tests 〽️
-Even though I have some experience testing components, I couldn't invest as much time as I would have liked to prove myself. I added test to the helper funtions I used for managing logic, but I got stuck trying to set up jest to work with redux in typescript and could not create tests for the components.
+- Add unit or integration tests ✔️
+There are a couple of tests fot helper functions, selectors and full components. Getting this to work made me tear up.
 - Add some micro interactions and animations ✔️
 I would say that the added animations are functional, although not that pretty. Just enough for the user to have some feedback.
 - Be careful about accessibility 〽️
 I probably could have made the typhographies a little bit easier on the eyes.
 - Be careful about your markup semantics 〽️
 I was aware of this for most of the journey, but I think I could have done a better job.
+# First thing to improve
 
-# First things to improve
-
-- Number one would be to get jest to work with redux in typescript and add some component tests. I got an extra day just for this and could not make it.
+- I don't think I'm taking advantage of Next.js capabilities. There is a warning coming from the original repository in which server and client side classnames for one of the components don't match, but I wasn't able to fix it.
 
 # Some thoughts and hiccups in the way
 

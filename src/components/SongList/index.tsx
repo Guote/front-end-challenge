@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSelector } from '$/store';
 import { getError } from '$/store/player';
 import * as R from 'ramda';
